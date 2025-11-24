@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Creador de Tareas</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/sketchy/bootstrap.min.css"
+          integrity="sha384-RxqHG2ilm4r6aFRpGmBbGTjsqwfqHOKy1ArsMhHusnRO47jcGqpIQqlQK/kmGy9R"
+          crossorigin="anonymous">
+
+    <!-- Fuente de Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.2/css/fontawesome.min.css" integrity="sha384-X8QTME3FCg1DLb58++lPvsjbQoCT9bp3MsUU3grbIny/3ZwUJkRNO8NPW6zqzuW9" crossorigin="anonymous">
+
+    <!-- Nuestra hoja de estilo (main.css) -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+    <main class="container p-4">
+        <h1 class="display-4 text-center mt-4 titulo">App de Gestión de Tareas</h1>
+        <h2 class="display-4 text-center mt-4 titulo">Creador de Tareas</h2>
+        <div class="row">
+            <div class="col-md-5 offset-md-4 my-auto">
+                <div class="card">
+                    <div class="card-header">
+                        <form action="/crear-tarea" method="post">
+                            <div class="form-group">
+                                <input type="text" name="contenido_tarea" placeholder="Tarea" class="form-control" autofocus>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="categoria_tarea" placeholder="Categoria" class="form-control" autofocus>
+                            </div>
+                            <div class="form-group">
+                                <input type="date" name="fecha_limite_tarea" placeholder="Fecha_limite" class="form-control" autofocus>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">
+                                Guardar
+                            </button>
+                        </form>
+                    </div>
+                    <div class="card-header">
+                        <form action="/vuelta-home" method="post">
+                            <button type="submit" class="btn btn-primary btn-block">
+                                Cancelar
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
